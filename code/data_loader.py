@@ -63,7 +63,7 @@ def clean_accession(acc):
     return str(acc)
 
 # Set Entrez email
-Entrez.email = "rodriguezgbalberto@gmail.com"
+Entrez.email = "##YOUR_EMAIL##"
 
 # Thread-safe lock for Entrez requests (NCBI prefers <3 requests/sec)
 entrez_lock = threading.Lock()
