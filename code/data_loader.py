@@ -12,12 +12,12 @@ from concurrent.futures import ThreadPoolExecutor, as_completed
 import threading
 
 # ── Paths ────────────────────────────────────────────────────────
-DATA_DIR      = Path("C:\\Users\\rodri\\Desktop\\MASTER\\EMMBIOME\\Grecia\\Courses\\Bioinformatics\\Project\\genomic_multimodal_fusion\\data")
+DATA_DIR      = Path("##DATA_DIR##")
 RAW_DIR       = DATA_DIR / "raw"
 FASTA_DIR     = DATA_DIR / "fasta"
 PROCESSED_DIR = DATA_DIR / "processed"
 
-DATA_VIRUSES_DIR = Path("C:\\Users\\rodri\\Desktop\\MASTER\\EMMBIOME\\Grecia\\Courses\\Bioinformatics\\Project\\genomic_multimodal_fusion\\Data_Viruses\\Data_Viruses.xlsx")
+DATA_VIRUSES_DIR = Path("##DATA_VIRUSES_DIR##")
 
 for d in [RAW_DIR, FASTA_DIR, PROCESSED_DIR]:
     d.mkdir(parents=True, exist_ok=True)
