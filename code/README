@@ -1,1 +1,8 @@
+1. data_loader.py
+To download the data run data_loader.py
+First change the directory paths to own.
+Also set your own email
 
+The code access NCBI to download the sequences and stores them in folders per virus.
+
+2. 
