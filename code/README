@@ -10,3 +10,5 @@ This script is used to process all sequences into a csv file that will be used a
 Again, change directory paths to own.
 
 3. preprocessing.py
+This script cleans the sequences, handles the variable lengths among viruses and splits the data into tran and test.
+It also shows some stats about the class (virus) distribution of the data, useful for understanding the limitations of the project.
