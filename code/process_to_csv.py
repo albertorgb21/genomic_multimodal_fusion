@@ -10,7 +10,7 @@ from Bio import SeqIO, Entrez
 from tqdm import tqdm
 
 # ── Paths ────────────────────────────────────────────────────────
-DATA_DIR      = Path("C:\\Users\\rodri\\Desktop\\MASTER\\EMMBIOME\\Grecia\\Courses\\Bioinformatics\\Project\\genomic_multimodal_fusion\\data")
+DATA_DIR      = Path("##DATA_DIR##")
 RAW_DIR       = DATA_DIR / "raw"
 FASTA_DIR     = DATA_DIR / "fasta"
 PROCESSED_DIR = DATA_DIR / "processed"
