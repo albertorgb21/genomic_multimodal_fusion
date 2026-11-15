@@ -1,4 +1,4 @@
-s1. data_loader.py
+1. data_loader.py
 This script is used to download the data run data_loader.py
 First change the directory paths to own.
 Also set your own email
