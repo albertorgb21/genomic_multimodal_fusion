@@ -6,7 +6,7 @@ Classification of 30 virus types from whole genomic sequences by fusing two comp
 - **Stream B — PRCFX-DT (PageRank).** A 64×64 codon-transition Markov graph is built per sequence and its PageRank centrality gives a 64-dim feature vector. A Decision Tree on this vector reproduces the method of Khodaei et al. (2025).
 - **Fusion.** The two vectors are standardised and concatenated (320-dim) and classified by either a standard MLP or a Mixture-of-Experts (MoE) head.
 
-> TODO: add 1–2 sentences on the motivation / course or project context.
+This project was developed as part of the Research Methodology in Biomedical Engineering course at the University of Patras, exploring how signal processing, graph-based representations and deep learning can be combined for genomic sequence classification. The central research question is whether complementary representations of viral genomes can improve classification performance compared with individual feature extraction approaches.
 
 ## Results (test set, 30 classes)
 
@@ -19,15 +19,15 @@ Test set = 20 % of the data, evaluated once with the checkpoint selected on the 
 | Fusion — Standard MLP (A+B) | 0.9967 | 0.9585 |
 | Fusion — MoE (E=4) | 0.9957 | 0.9556 |
 
-> TODO: add one or two sentences discussing these numbers (for example, that Stream B alone is the strongest system and the fusion heads do not improve on it).
+Stream B achieves the best overall performance, with 99.76% accuracy and a macro F1-score of 0.9829, outperforming both Stream A and the fusion architectures. Although the CNN-based Stream A provides a complementary representation, neither the standard MLP nor the four-expert MoE improves upon the PageRank-based classifier, suggesting that the graph-derived features capture highly discriminative information for this dataset.
 
 ## Data
 
 173,182 sequences after cleaning (non-ACGT characters removed, sequences shorter than 500 nt dropped), split 70 % train / 10 % validation / 20 % test (stratified).
 
-> TODO: say where the accession lists come from (the Excel file read by `data_loader.py`, one sheet per virus) and add a link or instructions to obtain it.
+The dataset was assembled from viral genome records indexed in the NCBI GenBank database. The accession lists are maintained in an Excel workbook, with one worksheet per virus class, and are used to retrieve the corresponding nucleotide sequences through NCBI Entrez. The accession workbook is not included in this repository; users must obtain the original workbook from the project author before running the data acquisition pipeline. Once retrieved, the sequences can be downloaded directly from NCBI using their accession identifiers.
 
-The data is not stored in the repository. It is downloaded from NCBI and written to a `data/` folder at the repository root (listed in `.gitignore`).
+The data is not stored in the repository. It is downloaded from NCBI and written to a `data/` folder at the repository root.
 
 ## Repository structure
 
@@ -91,6 +91,10 @@ Run everything from inside `src/`.
 ## References
 
 - Khodaei A. et al. *PRCFX-DT: a new graph-based approach for feature selection and classification of genomic sequences.* BMC Bioinformatics 26, 159 (2025). https://doi.org/10.1186/s12859-025-06183-4
+- Chen D., Wang J., Yan M., Bao F. S. A Complex Prime Numerical Representation of Amino Acids for Protein Function Comparison. Journal of Computational Biology 23(8), 669–677 (2016). https://doi.org/10.1089/cmb.2015.0178
+- Wang Z., Oates T. Imaging Time-Series to Improve Classification and Imputation. Proceedings of the 24th International Joint Conference on Artificial Intelligence (IJCAI), 3939–3944 (2015). https://arxiv.org/abs/1506.00327
+- Jacobs R. A., Jordan M. I., Nowlan S. J., Hinton G. E. Adaptive Mixtures of Local Experts. Neural Computation 3(1), 79–87 (1991). https://doi.org/10.1162/neco.1991.3.1.79
+
 
 > TODO: add the reference for the CPNR encoding and the MoE reference you use, after checking them.
 
