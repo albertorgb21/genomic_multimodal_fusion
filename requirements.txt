@@ -1,0 +1,21 @@
+# Python 3.13 (the notebooks were run with 3.13.12)
+#
+# Versions marked "pinned" are the ones printed by the notebook outputs.
+# For the others, run `pip freeze` in your venv and copy the exact versions here.
+
+numpy==2.4.4            # pinned
+pandas==3.0.2           # pinned
+scikit-learn==1.8.0     # pinned
+torch==2.11.0           # pinned (CPU build; see install note in README)
+
+scipy                   # StreamB (Wilcoxon rank-sum test)
+matplotlib
+seaborn
+joblib                  # also installed with scikit-learn
+tqdm
+biopython               # data_loader.py / process_to_csv.py (Bio.SeqIO, Bio.Entrez)
+openpyxl                # pandas.read_excel() in data_loader.py
+
+# To run the notebooks
+ipykernel
+jupyter
